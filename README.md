@@ -2,7 +2,7 @@
 GoIDS Is basic  fasthttp server + intrusion detection On Post Method
 
 ##### How Does It Work
-Any incoming POST request  passes through 78 regex that are included in `filters.json` file. in case of incompatibility Post Body with Rule Filters , Client receives `OK` message .
+Any incoming POST request  passes through 78 regex that are included in `filters.json` file and per each item in filters , infection level and  security issue are defined . in case of incompatibility Post Body with Rule Filters , Client receives `OK` message .
 
 #### Run Project
 
