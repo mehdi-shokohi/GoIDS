@@ -10,7 +10,6 @@ import (
 var defaultRules *ids.Rules
 func FHandler(ctx *fasthttp.RequestCtx){
 	dt,_:=url.QueryUnescape(string(ctx.PostBody()))
-	println(dt)
 	for _,d:=range defaultRules.NewRules().Filters.Filter{
 
 		match, _ := regexp.MatchString(d.Rule, dt)
@@ -23,7 +22,7 @@ func FHandler(ctx *fasthttp.RequestCtx){
 			return
 		}
 	}
-	ctx.Write([]byte("ok"))
+	ctx.Write([]byte("OK"))
 }
 
 func main(){
@@ -31,7 +30,7 @@ func main(){
 	defaultRules=new(ids.Rules)
 
 
-
+	fmt.Println("Server Is Running On Port 8080")
 	fasthttp.ListenAndServe(":8080", FHandler)
 
 }
